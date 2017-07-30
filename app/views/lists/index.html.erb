@@ -2,7 +2,7 @@
   <header class="header">
     <h1>todos</h1>
     <%= form_for(@list) do |f| %>
-        <%= f.text_field :name, class: "new-todo", placeholder: "What items needs to be done?", autofocus: "" %>
+        <%= f.text_field :name, class: "new-todo", require: true, placeholder: "What needs to be done?", autofocus: "" %>
         <%= f.submit style: "display:none" %>
     <% end %>
   </header>
