@@ -2,10 +2,10 @@
   <header class="header">
     <h1><%= @list.name %></h1>
     <%= form_for @list do |f| %>
-      <%= f.fields_for :items, @list.items.build do |list| %>
-        <%= list.text_field :name, class: "new_todo", placeholder: "Add an item.. ", autofocus: "" %>
+        <%= f.fields_for :items, @list.items.build do |list| %>
+            <%= list.text_field :name, class: "new-todo", placeholder: "Add an item.. ", autofocus: "" %>
         <% end %>
-      <%= f.submit %>
+        <%= f.submit style: "display:none;" %>
     <% end %>
   </header>
 
@@ -15,11 +15,7 @@
 
     <!-- Iteration of @lists -->
     <ul class="todo-list">
-          <li>
-            <div class="view">
-              <label></label>
-            </div>
-          </li>
+      <%= render(@list.items) || 'No items exist for this list yet.' %>
     </ul>
   </section>
 
