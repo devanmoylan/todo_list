@@ -1,24 +1,20 @@
 <section class="todoapp">
-
   <header class="header">
-    <h1>Todo Lists</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus="">
+    <h1><%= @list.name %></h1>
+    <input class="new-todo" placeholder="What items needs to be done?" autofocus="">
   </header>
 
   <section class="main">
     <input class="toggle-all" type="checkbox">
     <label for="toggle-all">Mark all as complete</label>
+
+    <!-- Iteration of @lists -->
     <ul class="todo-list">
-      <li>
-        <div class="view">
-          <label><a href="#">Shopping List</a></label>
-        </div>
-      </li>
-      <li>
-        <div class="view">
-          <label><a href="#">Reading List</a></label>
-        </div>
-      </li>
+          <li>
+            <div class="view">
+              <label></label>
+            </div>
+          </li>
     </ul>
   </section>
 

@@ -1,0 +1,42 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>todos</h1>
+    <%= form_for(@list) do |f| %>
+        <%= f.text_field :name, class: "new-todo", placeholder: "What items needs to be done?", autofocus: "" %>
+        <%= f.submit style: "display:none" %>
+    <% end %>
+  </header>
+
+  <section class="main">
+    <input class="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+
+    <!-- Iteration of @lists -->
+    <ul class="todo-list">
+      <% @lists.each do |list| %>
+          <li>
+            <div class="view">
+              <label><%= link_to list.name, list_path(list) %></label>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <span class="todo-count"><strong>1</strong> item left</span>
+    <ul class="filters">
+      <li>
+        <a href="#/" class="selected">All</a>
+      </li>
+      <li>
+        <a href="#/active" class="">Active</a>
+      </li>
+      <li>
+        <a href="#/completed">Completed</a>
+      </li>
+    </ul>
+    <button class="clear-completed" style="display: block;">Clear completed</button>
+  </footer>
+
+</section>
