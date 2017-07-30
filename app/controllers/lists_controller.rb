@@ -26,7 +26,7 @@ class ListsController < ApplicationController
   end
 
   def set_list
-    @list = List.find(params[:id])
+    @list = List.find(params[:id, items_attributes: [:name]])
   end
 
 end
