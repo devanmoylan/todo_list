@@ -9,5 +9,7 @@ module ItemsHelper
       f.check_box :status, :class => "toggle", :checked => item.completed?
     end
   end
+
+
 end
 

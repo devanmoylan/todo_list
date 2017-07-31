@@ -13,14 +13,18 @@
     <input class="toggle-all" type="checkbox">
     <label for="toggle-all">Mark all as complete</label>
 
-    <!-- Iteration of @lists -->
+    <!-- Iteration of @items -->
     <ul class="todo-list">
-      <%= render(@list.items) || 'No items exist for this list yet.' %>
+      <% if @items.count > 0 %>
+          <%= render partial: 'items/item', collection: @items %>
+      <% else %>
+          <p class="new-todo">No items</p>
+      <% end %>
     </ul>
   </section>
 
   <footer class="footer">
-    <span class="todo-count"><strong>1</strong> item left</span>
+    <span class="todo-count"><strong><%= active_item_count(@list) %></strong> item left</span>
     <ul class="filters">
       <li>
         <a href="#/" class="selected">All</a>

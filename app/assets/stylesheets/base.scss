@@ -247,6 +247,11 @@ label[for='toggle-all'] {
   display: none;
 }
 
+.destroy-button {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 .todo-list li.editing:last-child {
   margin-bottom: -1px;
 }

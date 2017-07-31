@@ -8,6 +8,17 @@ class ListsController < ApplicationController
   end
 
   def show
+
+    if params[:completed]
+      #completed items
+      @items = @list.items.where(status: 1)
+    elsif params[:active]
+      #incomplete items
+      @items = @list.items.where(status: 0)
+    else
+      #all items
+      @items = @list.items
+    end
   end
 
   def create

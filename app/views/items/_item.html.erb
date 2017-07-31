@@ -1,10 +1,11 @@
-<li class="<%= li_class_for_item(item) %>">
-  <div class="view">
+<% if item.valid? %>
+    <li class="<%= li_class_for_item(item) %>">
+      <div class="view">
 
-    <%= form_for_item_status(item) %>
+        <%= form_for_item_status(item) %>
 
-    <label><%= item.name %></label>
-    <% byebug %>
-    <%= button_to "x", list_item_path(item.list, item), :method => "delete", class: "destroy" %>
-  </div>
-</li>
+        <label><%= item.name %></label>
+        <%= button_to "x", list_item_path(item.list, item), :method => "delete", class: "destroy destroy-button" %>
+      </div>
+    </li>
+<% end %>
