@@ -1,6 +1,10 @@
 <li class="<%= "completed" if item.completed? %>">
   <div class="view">
-    <input class="toggle" type="checkbox" <%= "checked='checked'" if item.completed? %>>
+
+    <%= form_for ([@list, item]) do |f| %>
+        <%= f.check_box :status, :class => "toggle", :checked => (true if item.completed?) %>
+    <% end %>
+
     <label><%= item.name %></label>
   </div>
 </li>
