@@ -1,5 +1,6 @@
-<li>
+<li class="<%= "completed" if item.completed? %>">
   <div class="view">
+    <input class="toggle" type="checkbox" <%= "checked='checked'" if item.completed? %>>
     <label><%= item.name %></label>
   </div>
 </li>

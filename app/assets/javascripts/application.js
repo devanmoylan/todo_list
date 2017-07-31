@@ -13,3 +13,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){
+    $("input.toggle").on("change", function(){
+        $(this).parents("form").trigger("submit")
+    })
+});

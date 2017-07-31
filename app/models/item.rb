@@ -1,4 +1,18 @@
 class Item < ApplicationRecord
   belongs_to :list
   validates :name, presence: true
+
+  STATUS = {
+      :incomplete => 0,
+      :complete => 1
+  }
+
+  def completed?
+    self.status == STATUS[:complete]
+  end
+
+  def incomplete?
+    self.status == STATUS[:incomplete]
+  end
+
 end

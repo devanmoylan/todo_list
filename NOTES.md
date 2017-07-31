@@ -6,4 +6,3 @@
 - see all their lists
 - show a list
 
-
