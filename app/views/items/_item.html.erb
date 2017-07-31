@@ -4,5 +4,7 @@
     <%= form_for_item_status(item) %>
 
     <label><%= item.name %></label>
+    <% byebug %>
+    <%= button_to "x", list_item_path(item.list, item), :method => "delete", class: "destroy" %>
   </div>
 </li>

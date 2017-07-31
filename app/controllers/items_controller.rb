@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:update]
+  before_action :set_item, only: [:update, :destroy]
+
   def new
   end
 
@@ -7,6 +8,11 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to list_path(@item.list)
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to list_path(@item.list)
   end
 
   private
